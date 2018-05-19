@@ -2,10 +2,21 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <!-- Required meta tags -->
+        <title>{% block title %}Welcome!{% endblock %}</title>      
+        {% block stylesheets %}
+            <link href="{{ asset('css/bootstrap.min.css','frontend') }}" rel="stylesheet" />
+            <link href="{{ asset('css/main.css','frontend') }}" rel="stylesheet" />
+        {% endblock %}
     </head>
-    <body>
+    <body class="wrapper">
+        <nav class="navbar navbar-light bg-light justify-content-between mb-5">
+            <a class="navbar-brand">Blog</a>
+            <a href="{{ path('admin') }}" class="btn btn-success my-2 my-sm-0">
+                <span class="glyphicon glyphicon-search">Admin</span>
+            </a>
+        </nav>
+
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
