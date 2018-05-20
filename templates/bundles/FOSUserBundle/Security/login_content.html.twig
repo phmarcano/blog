@@ -1,0 +1,40 @@
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+<form class="form-group-lg" action="{{ path("fos_user_security_check") }}" method="post">
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    <p class="text-right"> <a href={{ path('fos_user_registration_register') }}> Register</a></p>     
+    {% if error %}
+        {% if error %}
+            <div class="alert alert-danger" role="alert">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+    {% endif %}
+    <fieldset>
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control" for="username" placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+        <br>
+        <div class="row">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input class="form-control" for="password" placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}" type="password" id="password" name="_password" required="required" />
+            </div>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" for="remember_me"/>{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+            </label>
+        </div>
+        <input class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+        <a class="btn btn-lg  btn-social btn-google btn-block" href="{{ path('google_login') }}" > 
+           <span class="fa fa-google"></span> Sign in with Google
+        </a>
+    </fieldset>
+</form>

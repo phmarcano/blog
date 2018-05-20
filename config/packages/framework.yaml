@@ -32,3 +32,5 @@ framework:
         packages:
             frontend:
                 base_path: 'assets'
+    templating:
+        engines: ['twig']

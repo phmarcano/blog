@@ -6,14 +6,16 @@
         <title>{% block title %}Welcome!{% endblock %}</title>      
         {% block stylesheets %}
             <link href="{{ asset('css/bootstrap.min.css','frontend') }}" rel="stylesheet" />
+            <link href="{{ asset('css/bootstrap-social.css','frontend') }}" rel="stylesheet" />
+            <link href="{{ asset('css/assets/css/font-awesome.css','frontend') }}" rel="stylesheet" />
             <link href="{{ asset('css/main.css','frontend') }}" rel="stylesheet" />
         {% endblock %}
     </head>
-    <body class="wrapper">
+    <body class="container wrapper">
         <nav class="navbar navbar-light bg-light justify-content-between mb-5">
             <a class="navbar-brand">Blog</a>
             <a href="{{ path('admin') }}" class="btn btn-success my-2 my-sm-0">
-                <span class="glyphicon glyphicon-search">Admin</span>
+                <span class="glyphicon glyphicon-search"> Access to Admin</span>
             </a>
         </nav>
 

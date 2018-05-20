@@ -1,0 +1,12 @@
+{# templates/bundles/FOSUserBundle/layout.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="d-flex justify-content-center align-items-center container ">
+                {% block fos_user_content %}{% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
