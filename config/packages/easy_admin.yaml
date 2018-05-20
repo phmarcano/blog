@@ -2,9 +2,11 @@ easy_admin:
     entities:
         # List the entity class name you want to manage
         - App\Entity\Post
+        - App\Entity\User
     site_name: 'Admin'
     design:
         menu:
-            - { label: 'Home', url: '/' }
-            - { entity: 'Post', params: { sortDirection: 'ASC' } }
+            - { label: 'Posts',entity: 'Post', params: { sortDirection: 'DESC' } }
+            - { label: 'Users',entity: 'User', params: { sortDirection: 'DESC' } }
+            - { label: '< Back', url: '/' }
        

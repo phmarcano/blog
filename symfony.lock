@@ -65,6 +65,15 @@
             "ref": "66070ea553247b0cd5275e21d0fe5399a25f40be"
         }
     },
+    "friendsofsymfony/oauth-server-bundle": {
+        "version": "2.0-dev"
+    },
+    "friendsofsymfony/oauth2-php": {
+        "version": "1.2.3"
+    },
+    "friendsofsymfony/user-bundle": {
+        "version": "v2.1.2"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
@@ -91,6 +100,9 @@
     },
     "pagerfanta/pagerfanta": {
         "version": "v1.1.0"
+    },
+    "paragonie/random_compat": {
+        "version": "v2.0.12"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -241,6 +253,9 @@
             "version": "3.3",
             "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
         }
+    },
+    "symfony/templating": {
+        "version": "v4.0.9"
     },
     "symfony/translation": {
         "version": "3.3",
