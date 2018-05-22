@@ -2,21 +2,22 @@
 
 namespace App\Controller;
 
+use App\Entity\Post;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use MediaMonks\RestApi\Response\Response;
-use App\Entity\Post;
 
 /**
- * @Route("/api/")
+ * @Route("/api")
  */
 class ApiController extends Controller {
 
-    /**
-     * @Route("blogs/")
+      /**  
+     * @Route("blogs/", methods="GET")
      */
-    public function listPostAction() {
-        $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
+    public function listPostAction(): Response {
+           
+        $posts = $this->getDoctrine()->getRepository(Post::class)->findAll(); 
         $response = array_map(function($post) {
             return [
                 'id' => $post->getId(),
@@ -24,33 +25,27 @@ class ApiController extends Controller {
             ];
         }, $posts);
         
-        return $response;
+        return new Response($response);
     }
 
     /**
-     * @Route("blogs/{id}",requirements={"id" = "\d+"})
+     * @Route("blogs/{id}",requirements={"id" = "\d+"}, methods="GET")
      */
-    public function viewPostAction($id) {
-        $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
-        if (is_null($post)) {
-            return new Response('Post not found', Response::HTTP_BAD_REQUEST);
-        }
+    public function viewPostAction(Post $post): Response  {
+        
         $response = [
             'title' => $post->getTitle(),
             'body' => $post->getBody()
         ];
         
-        return $response;
+        return new Response($response);
     }
 
     /**
-     * @Route("blogs/{id}/detail",requirements={"id" = "\d+"})
+     * @Route("blogs/{id}/detail",requirements={"id" = "\d+"}, methods="GET")
      */
-    public function detailPostAction($id) {
-        $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
-        if (is_null($post)) {
-            return new Response('Post not found', Response::HTTP_BAD_REQUEST);
-        }
+    public function detailPostAction(Post $post): Response  {
+        
         $response = [
             'id' => $post->getId(),
             'title' => $post->getTitle(),
@@ -58,7 +53,7 @@ class ApiController extends Controller {
             'tags' => $post->getTags(),
         ];
         
-        return $response;
+        return new Response($response);
     }
 
 }

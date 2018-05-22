@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         bootstrap="./bootstrap/phpunit.php">
+    <testsuites>
+        <testsuite>
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+          <env name="KERNEL_CLASS" value="App\Kernel" />
+          <env name="DATABASE_URL" value="sqlite:///%kernel.project_dir%/var/blog.db" />
+    </php>
+</phpunit>
