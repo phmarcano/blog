@@ -49,6 +49,7 @@
         }
     ]
 }
+
 ```
 ##### View Post
 `[GET] /api/blogs/{postId}`
@@ -61,7 +62,7 @@
     }
 }
 ```
-```
+
 ##### Post detail
 `[GET] /api/blogs/{postId}/detail`
 
