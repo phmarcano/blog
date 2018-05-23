@@ -13,7 +13,7 @@ use MediaMonks\RestApi\Response\Response;
 class ApiController extends Controller {
 
       /**  
-     * @Route("blogs/", methods="GET")
+     * @Route("/blogs/", methods="GET")
      */
     public function listPostAction(): Response {
            
@@ -29,7 +29,7 @@ class ApiController extends Controller {
     }
 
     /**
-     * @Route("blogs/{id}",requirements={"id" = "\d+"}, methods="GET")
+     * @Route("/blogs/{id}",requirements={"id" = "\d+"}, methods="GET")
      */
     public function viewPostAction(Post $post): Response  {
         
@@ -42,7 +42,7 @@ class ApiController extends Controller {
     }
 
     /**
-     * @Route("blogs/{id}/detail",requirements={"id" = "\d+"}, methods="GET")
+     * @Route("/blogs/{id}/detail",requirements={"id" = "\d+"}, methods="GET")
      */
     public function detailPostAction(Post $post): Response  {
         
