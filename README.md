@@ -34,3 +34,44 @@
 
 6. Open the web browser and go to the URL:
     - http://localhost:8000/
+
+## Restful API
+
+##### List Posts
+`[GET] /api/blogs/`
+
+```json
+{
+    "data": [
+        {
+            "id": 1,
+            "title": "Post"
+        }
+    ]
+}
+```
+##### View Post
+`[GET] /api/blogs/{postId}`
+
+```json
+{
+    "data": {
+        "title": "Post",
+        "body": "New Post"
+    }
+}
+```
+```
+##### Post detail
+`[GET] /api/blogs/{postId}/detail`
+
+```json
+{
+    "data": {
+        "id": 1,
+        "title": "Post",
+        "body": "New Post",
+        "tags": "Tag1, Tag2, Tag3"
+    }
+}
+```
